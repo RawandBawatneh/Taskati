@@ -5,18 +5,26 @@ import 'package:taskati/core/core.dart';
 
 class buttonW extends StatelessWidget {
   final String txt;
-  const buttonW({
+  final double height;
+    final double width;
+
+  final Function()func;
+
+   buttonW({
     required this.txt,
+    required this.func,
+    this.height=50,
+    this.width=250,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 250, // Set the width of the button
-      height: 50, // Set the height of the button
+      width: width, // Set the width of the button
+      height: height, // Set the height of the button
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: func,
         child: Text(
           txt,
           style: TextStyle(color: appColor.dartColor),
